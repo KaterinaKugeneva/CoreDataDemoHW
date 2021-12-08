@@ -8,8 +8,8 @@
 import UIKit
 
 class TaskListViewController: UITableViewController {
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    private let context = StorageManager.shared.persistentContainer.viewContext
     private var taskList: [Task] = []
     private let cellID = "task"
     
@@ -86,7 +86,7 @@ class TaskListViewController: UITableViewController {
     }
     private func showEditAlert(at row: Int) {
         let alert = UIAlertController(
-            title: "Editing task",
+            title: "Update task",
             message: "Do you want to edit?",
             preferredStyle: .alert)
         
